@@ -1,0 +1,13 @@
+.app {
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#message_form {
+    display: flex;
+    flex-direction: column;
+}
+/* ///// */

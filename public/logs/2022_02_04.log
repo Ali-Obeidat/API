@@ -1,0 +1,17 @@
+2022.02.04 12:21:52	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:23:52	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:24:49	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:26:07	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:29:10	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:30:06	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:31:45	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:33:25	2	WebAPI:parse auth start failed: [11]
+2022.02.04 12:33:25	2	WebAPI:auth start failed: [11]Service is not available
+2022.02.04 12:46:53	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 12:47:02	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 13:25:04	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 13:27:01	2	WebAPI:parse user add failed: [8]Not enough permissions
+2022.02.04 13:38:02	2	WebAPI:parse auth start failed: [11]
+2022.02.04 13:38:02	2	WebAPI:auth start failed: [11]Service is not available
+2022.02.04 13:38:56	2	WebAPI:parse user add failed: [3]Invalid parameters
+2022.02.04 13:39:32	2	WebAPI:parse user add failed: [3]Invalid parameters

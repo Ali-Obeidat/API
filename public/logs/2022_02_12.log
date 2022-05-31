@@ -1,0 +1,6 @@
+2022.02.12 15:30:41	2	WebAPI:parse user add failed: [3]Invalid parameters
+2022.02.12 15:31:06	2	WebAPI:parse user add failed: [3]Invalid parameters
+2022.02.12 16:27:36	2	WebAPI:parse user add failed: [3006]Invalid account password
+2022.02.12 16:27:57	2	WebAPI:parse user add failed: [3006]Invalid account password
+2022.02.12 16:58:18	2	WebAPI:parse deal get failed: [8]Not enough permissions
+2022.02.12 17:00:44	2	WebAPI:parse user password check failed: [3006]Invalid account password
