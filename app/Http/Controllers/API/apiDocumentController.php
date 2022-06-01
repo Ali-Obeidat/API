@@ -19,38 +19,41 @@ class apiDocumentController extends Controller
     // Function to upload user document 
     public function store(Request $request)
     {
-        $Identity1 = $request->file('Identity1');
-        $Identity2 = $request->file('Identity2');
-        $Address = $request->file('Address');
-        if ($request->Address != null) {
-            $AddressName = $Address->getClientOriginalName();
-            $Address->move(public_path('files'), $AddressName);
-        } else {
-            $AddressName = null;
-        }
-        if ($request->Identity1 != null) {
-            $Identity1Name = $Identity1->getClientOriginalName();
-            $Identity1->move(public_path('files'), $Identity1Name);
-        } else {
-            $Identity1Name = null;
-        }
-        if ($request->Identity2 != null) {
-            $Identity2Name = $Identity2->getClientOriginalName();
-            $Identity2->move(public_path('files'), $Identity2Name);
-        } else {
-            $Identity2Name = null;
+        if (!$request->hasFile('document')) {
+            return response()->json(['upload_file_not_found'], 400);
         }
 
-        $imageUpload = new Document();
+        $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx', 'xlsx'];
+        $files = $request->file('document');
+        $errors = [];
+        // return $files;
+        foreach ($files as $file) {
 
-        $imageUpload->user_id = Auth::user()->id;
-        $imageUpload->Identity1 = $Identity1Name;
-        $imageUpload->Identity2 = $Identity2Name;
-        $imageUpload->Address = $AddressName;
-        $imageUpload->document_status = 'processing';
-        $imageUpload->save();
+            $extension = $file->getClientOriginalExtension();
 
-        return 'Document was created';
+            $check = in_array($extension, $allowedfileExtension);
+            $docName = '';
+            if ($check) {
+                foreach ($request->document as $mediaFiles) {
+
+                    $name = $mediaFiles->getClientOriginalName();
+                    $path = $mediaFiles->move('files', $name);
+                    $docName = $docName . $name . ',';
+                    //store image file into directory and db
+
+                }
+                $document = new Document();
+                $document->user_id = $request['user_id'];
+                $document->document = $docName;
+                $document->document_type = $request['document_type'];
+                $document->type = $request['type'];
+                $document->document_status = 'pending';
+                $document->save();
+                return response()->json(['Document was created']);
+            } else {
+                return response()->json(['invalid_file_format'], 422);
+            }
+        }
     }
 
     // Function to let user update there documents while document_status:processing

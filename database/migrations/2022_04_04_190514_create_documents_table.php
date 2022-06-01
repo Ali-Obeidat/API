@@ -16,9 +16,9 @@ class CreateDocumentsTable extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->unique();
-            $table->text('Identity1')->nullable();
-            $table->text('Identity2')->nullable();
-            $table->text('Address')->nullable();
+            $table->text('document')->nullable();
+            $table->string('document_type')->nullable();
+            $table->string('type')->nullable();
             $table->string('document_status')->nullable();
             $table->timestamps();
         });
